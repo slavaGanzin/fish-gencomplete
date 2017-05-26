@@ -3,9 +3,10 @@
 [![Build Status][travis-badge]][travis-link]
 [![Slack Room][slack-badge]][slack-link]
 
-Autogenerate completions for command using --help
+Generate fish completions using command's --help
 
 ## Install
+
 
 With [fisherman]
 
@@ -13,10 +14,12 @@ With [fisherman]
 fisher slavaGanzin/fish-gencomplete
 ```
 
+You need [help2man](https://www.gnu.org/software/help2man/) installed to run this plugin
+
 ## Usage
 
 ```fish
-gencomplete commandname [--help-key]
+gencomplete binaryInPath [--help-key-of-binary]
 ```
 
 [travis-link]: https://travis-ci.org/slavaGanzin/fish-gencomplete

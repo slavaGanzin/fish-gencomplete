@@ -1,6 +1,6 @@
-function gencomplete -d "Autogenerate completions for command using --help" --argument-names 'name' 'help'
+function gencomplete -d "Generate fish completions using command's --help" --argument-names 'name' 'help'
   if test -z $name
-    echo Usage: gencomplete yourbinary [--help-key]
+    echo Usage: gencomplete binaryInPath [--help-key-of-binary]
     return 127
   end
 
