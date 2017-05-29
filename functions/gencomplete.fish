@@ -1,4 +1,4 @@
-function gencomplete --description Generate\ fish\ completions\ using\ command\'s\ --help --argument name help
+function gencomplete --description "Generate fish completions using command's --help" --argument name
   set -l compdir ~/.config/fish/completions
 
 	if test -z $name
@@ -10,7 +10,7 @@ function gencomplete --description Generate\ fish\ completions\ using\ command\'
 
   mkdir /tmp/man ^/dev/null
   set -l mp /tmp/man/$name.1
-  help2man $name -h $help -o $mp
+  help2man $name -h "$help" -o $mp
 
   python -B $__fish_datadir/tools/create_manpage_completions.py --progress $mp --directory $compdir
 

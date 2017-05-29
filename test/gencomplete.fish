@@ -1,8 +1,8 @@
 test "$BASENAME"
-  'ls.1' == gencomplete ls | grep 'ls.1'
+  'ps.1' == gencomplete ps '--help all' | grep 'ps.1'
 end
 
 test "file"
-  'complete' == cat ~/.config/fish/completions/ls.fish | grep -o complete | uniq 
+  'complete' == cat ~/.config/fish/completions/ps.fish | grep -o complete | uniq
 end
 
