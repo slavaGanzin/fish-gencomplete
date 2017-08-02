@@ -15,10 +15,6 @@ fisher slavaGanzin/fish-gencomplete
 
 ## Usage
 
-gencomplete binaryInPath [--show-help-argument]
-
-## Examples:
-
 ```sh
 gencomplete systemctl
 gencomplete ss
@@ -30,10 +26,11 @@ gencomplete yourBinary --your-show-help-argument
 ## Prerequisites
 [help2man](https://www.gnu.org/software/help2man/):
 ```
-  sudo apt-get install help2man
+#Debian/Ubuntu
+sudo apt-get install help2man
 
-  sudo pacman -S help2man
-
+#Arch
+sudo pacman -S help2man
 
 ```
 
