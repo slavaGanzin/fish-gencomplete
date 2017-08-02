@@ -25,7 +25,7 @@ gencomplete yourBinary --your-show-help-argument
 
 ## Prerequisites
 [help2man](https://www.gnu.org/software/help2man/):
-```
+```sh
 #Debian/Ubuntu
 sudo apt-get install help2man
 
