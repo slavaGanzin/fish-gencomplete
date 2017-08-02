@@ -3,23 +3,38 @@
 [![Build Status][travis-badge]][travis-link]
 [![Slack Room][slack-badge]][slack-link]
 
+
+
 Generate fish completions using command's --help
 
 ## Install
-
-
-With [fisherman]
 
 ```
 fisher slavaGanzin/fish-gencomplete
 ```
 
-You need [help2man](https://www.gnu.org/software/help2man/) installed to run this plugin
-
 ## Usage
 
-```fish
-gencomplete binaryInPath [--help-key-of-binary]
+gencomplete binaryInPath [--show-help-argument]
+
+## Examples:
+
+```sh
+gencomplete systemctl
+gencomplete ss
+gencomplete jupyter --help
+gencomplete yourBinary --your-show-help-argument
+
+```
+
+## Prerequisites
+[help2man](https://www.gnu.org/software/help2man/):
+```
+  sudo apt-get install help2man
+
+  sudo pacman -S help2man
+
+
 ```
 
 [travis-link]: https://travis-ci.org/slavaGanzin/fish-gencomplete
