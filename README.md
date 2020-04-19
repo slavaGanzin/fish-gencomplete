@@ -10,7 +10,11 @@ Generate fish completions using command's --help
 ## Install
 
 ```
+# fisher
 fisher slavaGanzin/fish-gencomplete
+# fundle:
+sed -i "1ifundle plugin 'slavaGanzin/fish-gencomplete'" -i ~/.config/fish/config.fish
+
 ```
 
 ## Usage

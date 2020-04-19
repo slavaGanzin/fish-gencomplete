@@ -11,7 +11,7 @@ function gencomplete --description "Generate fish completions using command's --
   mkdir /tmp/man ^/dev/null
   set -l mp /tmp/man/$name.1
 
-  man_path=(man -Ww ls)
+  set man_path (man -Ww ls)
 
   if test -z "$man_path"
     help2man $name -h "$help" -o $mp --no-discard-stderr
