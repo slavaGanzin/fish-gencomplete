@@ -16,6 +16,4 @@ function gencomplete --description "Generate fish completions using command's --
   end
 
   python -B /usr/share/fish/tools/create_manpage_completions.py (/usr/bin/man -Ww $name) -v3
-
-  fish
 end
