@@ -1,27 +1,21 @@
 function gencomplete --description "Generate fish completions using command's --help" --argument name
-  set -l compdir ~/.config/fish/completions
-
 	if test -z $name
     echo Usage: gencomplete binaryInPath [--help-key-of-binary]
-    return 127
+    return 0
   end
 
   test -z $help; and set -l help --help
 
-  mkdir /tmp/man ^/dev/null
-  set -l mp /tmp/man/$name.1
+  set man_dir (dirname (/usr/bin/man -Ww man))
 
-  set man_path (man -Ww ls)
+  /usr/bin/man -Ww $name 1>/dev/null
 
-  if test -z "$man_path"
-    help2man $name -h "$help" -o $mp --no-discard-stderr
-  else
-    cat man_path | gunzip > $mp
+  if test $status -ne 0
+    help2man $name -h "$help" -o $man_dir/$name.1 --no-discard-stderr
+    gzip $man_dir/$name.1
   end
 
-  python -B $__fish_datadir/tools/create_manpage_completions.py --progress $mp --directory $compdir
+  python -B /usr/share/fish/tools/create_manpage_completions.py (/usr/bin/man -Ww $name) -v3
 
-  source $compdir/$name.fish
-
-  rm $mp
+  fish
 end
