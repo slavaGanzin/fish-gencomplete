@@ -5,5 +5,5 @@ before_install:
     - sudo apt-get -y install fish help2man
 script:
     - curl -Lo ~/.config/fish/functions/fisher.fish --create-dirs git.io/fisher
-    - fish -c "fisher add jorgebucaran/fisher"
-    - fish -c "fishtape test.fish"
+    - fisher add jorgebucaran/fisher
+    - fishtape test.fish
